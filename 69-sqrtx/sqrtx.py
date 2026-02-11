@@ -1,11 +1,3 @@
 class Solution:
     def mySqrt(self, x: int) -> int:
-        odd = 1
-        count = 0
-        
-        while x >= odd:
-            x -= odd
-            odd += 2
-            count += 1
-        
-        return count
+        return int(x**(1/2))
