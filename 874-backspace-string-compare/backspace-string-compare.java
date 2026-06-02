@@ -14,19 +14,8 @@ class Solution {
          if (t.charAt(i)!='#' ) st2.push(t.charAt(i));
        else if(!st2.isEmpty()) st2.pop(); 
        }
-       String ns1="";
-       String ns2="";
-
-       for(char ch : st1)
-          ns1+=ch;
-       for(char a : st2)
-       ns2+=a;
-
-       if(ns1.equals(ns2))
-         return true;
-    
-    return false;
-
+       
+       return st1.equals(st2);
        
 
 
