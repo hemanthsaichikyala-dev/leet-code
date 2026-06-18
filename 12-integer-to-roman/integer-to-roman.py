@@ -1,14 +1,19 @@
-class Solution:
-    def intToRoman(self, num: int) -> str:
-        roman_dict = {1000: "M", 900: "CM", 500: "D", 400: "CD",100: "C", 90: "XC", 50: "L", 40: "XL",10: "X", 9: "IX", 5: "V", 4: "IV",1: "I"}
+def int_to_roman(num):
+    # Step 1: store values and symbols from large to small
+    values = [1000, 900, 500, 400, 100, 90, 50, 40,
+              10, 9, 5, 4, 1]
+    symbols = ["M", "CM", "D", "CD", "C", "XC", "L", "XL",
+               "X", "IX", "V", "IV", "I"]
 
-        roman = ""
-        for value in roman_dict:
-            while num >= value:
-                roman += roman_dict[value]
-                num -= value
-        return roman
+    # Step 2: result string
+    roman = ""
 
+    # Step 3: check each value
+    for i in range(len(values)):
+        # Step 4: while number is >= value
+        while num >= values[i]:
+            roman += symbols[i]   # add symbol
+            num -= values[i]      # reduce number
 
-s = Solution()
-print(s.intToRoman(3729))
+    # Step 5: return result
+    return roman
